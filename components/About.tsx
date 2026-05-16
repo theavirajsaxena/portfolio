@@ -15,7 +15,7 @@ export function About() {
       <SectionHeading
         eyebrow="About"
         title="Curious by default. Precise when it ships."
-        description="Aviraj works across polished interfaces, backend systems, AI tooling, and open-source communities."
+        description="I work across polished interfaces, backend systems, AI tooling, and open-source communities."
       />
 
       <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">

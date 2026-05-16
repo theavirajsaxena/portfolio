@@ -54,7 +54,7 @@ export function Contact() {
         <SectionHeading
           eyebrow="Contact"
           title="Let's build something together."
-          description="Have a project, research idea, community collaboration, or internship lead? Send a note and Aviraj will take it from there."
+          description="Have a project, research idea, community collaboration, or internship lead? Send a note and I will take it from there."
         />
 
         <form onSubmit={handleSubmit} className="glass rounded-lg p-5 sm:p-7">
