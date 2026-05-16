@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 40% 98%;
+  --foreground: 240 10% 8%;
+  --muted: 215 16% 46%;
+  --border: 215 20% 86%;
+  --card: 0 0% 100%;
+  --accent: 217 91% 60%;
+}
+
+.dark {
+  --background: 240 10% 4%;
+  --foreground: 210 40% 98%;
+  --muted: 215 20% 70%;
+  --border: 220 18% 18%;
+  --card: 240 8% 8%;
+  --accent: 217 91% 60%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+body::before {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background:
+    radial-gradient(circle at 18% 18%, rgba(59, 130, 246, 0.14), transparent 28rem),
+    radial-gradient(circle at 84% 22%, rgba(14, 165, 233, 0.08), transparent 24rem),
+    linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)));
+}
+
+body::after {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  opacity: 0.11;
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.13) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 74%);
+}
+
+::selection {
+  color: white;
+  background: #3b82f6;
+}
+
+.glass {
+  border: 1px solid hsl(var(--border) / 0.65);
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(18px);
+}
+
+.dark .glass {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.42);
+}
+
+.section-shell {
+  margin-inline: auto;
+  width: min(100% - 2rem, 1120px);
+  padding-block: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    padding-block: 7rem;
+  }
+}
