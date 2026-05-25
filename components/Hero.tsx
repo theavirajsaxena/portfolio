@@ -19,9 +19,16 @@ const item = {
 
 export function Hero() {
   function scrollToProjects() {
-    document.getElementById("projects")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
+    const projects = document.getElementById("projects");
+    if (!projects) return;
+
+    const navOffset = 72;
+    const top =
+      projects.getBoundingClientRect().top + window.scrollY - navOffset;
+
+    window.scrollTo({
+      top,
+      behavior: "smooth"
     });
   }
 
@@ -60,16 +67,14 @@ export function Hero() {
             variants={item}
             className="mt-9 flex flex-col gap-3 sm:flex-row"
           >
-            <Link
-              href="#projects"
-              onClick={(event) => {
-                event.preventDefault();
-                scrollToProjects();
-              }}
+            <button
+              type="button"
+              onTouchStart={scrollToProjects}
+              onClick={scrollToProjects}
               className="focus-ring inline-flex items-center justify-center gap-2 rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:bg-blue-400"
             >
               View Projects <MoveRight className="h-4 w-4" />
-            </Link>
+            </button>
             <Link
               href="#contact"
               className="focus-ring inline-flex items-center justify-center rounded-full border border-border px-6 py-3 text-sm font-semibold transition hover:border-blue-500/70 hover:text-blue-500"
