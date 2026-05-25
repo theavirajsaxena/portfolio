@@ -18,6 +18,13 @@ const item = {
 };
 
 export function Hero() {
+  function scrollToProjects() {
+    document.getElementById("projects")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+
   return (
     <section
       id="home"
@@ -55,6 +62,10 @@ export function Hero() {
           >
             <Link
               href="#projects"
+              onClick={(event) => {
+                event.preventDefault();
+                scrollToProjects();
+              }}
               className="focus-ring inline-flex items-center justify-center gap-2 rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:bg-blue-400"
             >
               View Projects <MoveRight className="h-4 w-4" />
