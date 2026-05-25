@@ -67,17 +67,18 @@ export function Hero() {
             variants={item}
             className="mt-9 flex flex-col gap-3 sm:flex-row"
           >
+            {/* FIX 1: Removed onTouchStart. FIX 2: Added touch-manipulation to remove 300ms tap delay on mobile */}
             <button
               type="button"
-              onTouchStart={scrollToProjects}
               onClick={scrollToProjects}
-              className="focus-ring inline-flex items-center justify-center gap-2 rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:bg-blue-400"
+              className="focus-ring touch-manipulation inline-flex items-center justify-center gap-2 rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:bg-blue-400"
             >
               View Projects <MoveRight className="h-4 w-4" />
             </button>
+            {/* FIX 2 applied here too for consistency */}
             <Link
               href="#contact"
-              className="focus-ring inline-flex items-center justify-center rounded-full border border-border px-6 py-3 text-sm font-semibold transition hover:border-blue-500/70 hover:text-blue-500"
+              className="focus-ring touch-manipulation inline-flex items-center justify-center rounded-full border border-border px-6 py-3 text-sm font-semibold transition hover:border-blue-500/70 hover:text-blue-500"
             >
               Get in Touch
             </Link>
